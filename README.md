@@ -11,15 +11,16 @@
   
 </div>
 
+<br>
+
+<img width="1886" height="876" alt="image" src="https://github.com/user-attachments/assets/f4ed0408-ed37-4dad-9674-ee0f798b16b7" />
+
+✨ **CEFR 기반 실시간 레벨 평가 화면 데모** ✨
+
+
 ## 📌 프로젝트 소개
 
 학습자의 영어 실력에 따라 **대화 난이도를 실시간으로 조절**하는 AI 챗봇입니다. 학생을 대상으로 동화책 기반의 흥미로운 대화를 생성하며, **CEFR 기준**과 **BERT 기반 평가**를 통해 각 학생의 영어 수준을 지속적으로 평가하고 적응합니다.
-
-<div align="center">
-  <img src="./assets/demo.gif" alt="Adaptive English Chatbot Demo" width="80%">
-  <br>
-  <em>실시간 난이도 조절 데모</em>
-</div>
 
 ### ✨ 주요 기능
 
