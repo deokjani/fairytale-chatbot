@@ -1,131 +1,155 @@
-# 슈필라움 AI 동화책 챗봇
+# AI 동화책 챗봇 - 적응형 영어 학습 시스템
 
-## 📚 프로젝트 개요
+**초등학생을 위한 AI 기반 영어 난이도 자동 조절 및 평가 시스템**
 
-슈필라움(Spielraum)은 초등학생을 위한 AI 기반 영어 동화책 대화 시스템입니다. CEFR 레벨 기반으로 학습자 수준에 맞춰 자동으로 난이도를 조절하며, 실시간으로 대화를 평가합니다.
+<div align="center">
+  
+  [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
+  [![CEFR](https://img.shields.io/badge/CEFR-A1--C2-green)](https://www.coe.int/)
+  [![BERT](https://img.shields.io/badge/Model-BERT--based-orange)](https://huggingface.co/)
+  [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+  
+</div>
 
-### 주요 특징
-- 🎯 **CEFR 기반 난이도 자동 조절** (A1~C2)
-- 💬 **자연스러운 대화 생성** (LLM 활용)
-- 📊 **실시간 영어 수준 평가** (BERT 모델)
-- 🔍 **구문 복잡도 분석** (L2SCA 통합)
+## 📌 프로젝트 소개
 
-## 🛠️ 기술 스택
+학습자의 영어 실력에 따라 **대화 난이도를 실시간으로 조절**하는 AI 챗봇입니다. 초등학생을 대상으로 동화책 기반의 흥미로운 대화를 생성하며, **CEFR 기준**과 **BERT 기반 평가**를 통해 각 학생의 영어 수준을 지속적으로 평가하고 적응합니다.
 
-- **Backend**: FastAPI, Streamlit
-- **AI/ML**: 
-  - OpenAI GPT (대화 생성)
-  - BERT (CEFR 레벨 평가)
-  - AbdulSami/bert-base-cased-cefr 모델
-- **Database**: Redis (세션 관리)
-- **Languages**: Python 3.10+
+### ✨ 주요 기능
 
-## 🚀 설치 및 실행
+- 🎯 **실시간 CEFR 레벨 조절** - A1부터 C2까지 자동 난이도 조정
+- 💬 **자연스러운 대화 생성** - LLM을 활용한 문맥 인식 대화
+- 📊 **BERT 기반 평가** - `AbdulSami/bert-base-cased-cefr` 모델로 정확한 수준 측정
+- 🔍 **L2SCA 통합** - 23개 구문 복잡도 지표로 상세 분석
+- 🛡️ **안전한 학습 환경** - 부적절한 언어 감지 및 교정
 
-### 1. 환경 요구사항
+## 🚀 빠른 시작
+
+### 시스템 요구사항
+
+- Python 3.10+
+- Java 8+ (L2SCA 실행용)
+- CUDA GPU (선택사항)
+- Poetry
+
+### 설치 방법
+
 ```bash
-# Python 3.10 이상
-# Poetry (패키지 관리)
-# Java 8+ (L2SCA 실행용)
-```
+# 저장소 클론
+git clone https://github.com/[username]/adaptive-english-chatbot.git
+cd adaptive-english-chatbot
 
-### 2. 프로젝트 설정
-```bash
-# 클론
-git clone [repository-url]
-cd ai-book_spielraum
-
-# 환경 변수 설정
+# 환경 설정
 cp .env_sample .env
-# .env 파일에 OpenAI API 키 등 설정
+# .env 파일에 API 키 입력
 
 # 의존성 설치
 poetry install
+
+# L2SCA 권한 설정 (Linux/Mac)
+chmod -R 755 ./L2SCA-2023-08-15
 ```
 
-### 3. 실행
+### 실행
+
 ```bash
 # Streamlit 앱 실행
 poetry run streamlit run src/streamlit_app.py --server.port 7135
+
+# 웹 브라우저에서 접속
+# http://localhost:7135
 ```
 
-## 📁 프로젝트 구조
+## 📊 기술 스택
 
-```
-ai-book_spielraum/
-├── src/
-│   ├── streamlit_app.py   # Streamlit UI
-│   ├── api.py             # FastAPI 서버
-│   ├── v1/                # API v1 (기본 구현)
-│   ├── v2/                # API v2 (개선 버전)
-│   └── v3/                # API v3 (최신 버전)
-├── pyproject.toml         # Poetry 의존성
-└── poetry.lock           # 의존성 잠금
-```
+### AI/ML 모델
+- **대화 생성**: OpenAI GPT
+- **레벨 평가**: BERT (`AbdulSami/bert-base-cased-cefr`)
+- **음성 처리**: Google Cloud TTS (선택사항)
 
-## 🧠 핵심 기능
+### 백엔드
+- **웹 프레임워크**: FastAPI, Streamlit
+- **세션 관리**: Redis
+- **구문 분석**: L2SCA (Java 기반)
 
-### 1. CEFR 레벨 평가
-- **모델**: `AbdulSami/bert-base-cased-cefr`
-- **레벨**: A1(초급) ~ C2(원어민)
-- **특징**: 실시간 문장 난이도 평가
+## 🎯 CEFR 레벨 시스템
 
-### 2. 적응형 대화 생성
+| 레벨 | 수준 | 특징 | 예시 문장 |
+|------|------|------|-----------|
+| **A1** | 입문 | 기초 단어와 간단한 문장 | "I like apple" |
+| **A2** | 초급 | 일상 표현과 기본 시제 | "I went to school yesterday" |
+| **B1** | 중급 | 복문과 조건문 사용 | "If I have time, I will visit you" |
+| **B2** | 중상급 | 관계절과 종속절 활용 | "The book that I read was interesting" |
+| **C1** | 상급 | 복잡한 구문과 추상 개념 | "Despite the circumstances, we achieved our goals" |
+| **C2** | 최상급 | 원어민 수준의 표현 | "The ramifications will reverberate throughout" |
+
+## 📈 성능 지표
+
+### CEFR-SP 데이터셋 평가 결과
+
+- **전체 정확도**: 43.2%
+- **인접 레벨 정확도**: 90.6%
+- **Macro F1 Score**: 0.226
+
+> 💡 인접 레벨 간 높은 구분 정확도로 점진적 난이도 조절에 최적화
+
+## 🔧 핵심 구현
+
+### 1. 적응형 난이도 조절
+
 ```python
-# 사용자 레벨에 맞춘 응답 생성
-def generate_response(user_level: str, context: str):
-    # CEFR 레벨 기반 프롬프트 조정
-    # 어휘, 문법 복잡도 자동 조절
-    return ai_response
+def adjust_difficulty(user_input):
+    # 1. BERT 모델로 CEFR 레벨 평가
+    current_level = evaluate_cefr(user_input)
+    
+    # 2. 신뢰도 기반 레벨 안정화
+    stabilized_level = stabilize_level(current_level, history)
+    
+    # 3. LLM에 적절한 난이도로 응답 생성 요청
+    response = generate_response(stabilized_level)
+    
+    return response
 ```
 
-### 3. 난이도 조절 메커니즘
-- 사용자 입력 분석 → CEFR 레벨 판정
-- 신뢰도 기반 레벨 안정화
-- 점진적 난이도 조정
+### 2. 극단 레벨 처리
 
-## 📊 성능 평가
-
-- **정확도**: 43.2% (CEFR-SP 데이터셋)
-- **Adjacent Accuracy**: 90.6%
-- **특징**: 인접 레벨 간 높은 구분 정확도
+- **A1 (초급)**: 7단어 미만 자동 판정, 단순 어휘 사용
+- **C2 (고급)**: 명시적 고급 표현 요청, 복잡한 구문 생성
 
 ## 💡 개발 인사이트
 
 ### 프롬프트 엔지니어링
-- 명확하고 간결한 지시사항이 핵심
-- CEFR이 L2SCA보다 LLM에게 친숙
+✅ **효과적인 방법**
+- 명확하고 간결한 지시사항
 - 중요 내용은 프롬프트 앞뒤 배치
+- CEFR 기준 명시 (LLM이 친숙한 표준)
+
+❌ **피해야 할 방법**
+- 복잡한 다중 조건
+- L2SCA 같은 생소한 지표 직접 사용
+- Chain of Thought (오버엔지니어링)
 
 ### 모델 조합 전략
 - **BERT**: 안정적이고 일관된 평가
 - **LLM**: 창의적이고 자연스러운 대화
 - **하이브리드**: 두 모델의 장점 결합
 
-## 🔜 향후 개선 계획
+## 🔮 향후 계획
 
-1. **평가 정확도 향상**
-   - Oxford 5000 단어 리스트 파인튜닝
-   - 문장 수준 데이터 추가 학습
-
-2. **하이브리드 평가**
-   - BERT + LLM 가중치 조합
-   - 신뢰도 기반 동적 조정
-
-3. **사용자 경험 개선**
-   - 실시간 피드백 강화
-   - 학습 진도 시각화
+- [ ] Oxford 5000 단어 리스트 파인튜닝
+- [ ] BERT + LLM 가중치 조합 시스템
+- [ ] 실시간 학습 진도 시각화
+- [ ] 다국어 지원 (한국어, 중국어 등)
+- [ ] 음성 인식/합성 통합
 
 ## 📚 참고 자료
 
 - [CEFR Framework](https://www.coe.int/en/web/common-european-framework-reference-languages)
-- [Hugging Face Model](https://huggingface.co/AbdulSami/bert-base-cased-cefr)
-- [L2SCA](https://sites.psu.edu/xxl13/l2sca/)
+- [BERT CEFR Model](https://huggingface.co/AbdulSami/bert-base-cased-cefr)
+- [L2SCA Tool](https://sites.psu.edu/xxl13/l2sca/)
+- [CEFR-SP Dataset](https://doi.org/10.18653/v1/2022.emnlp-main.416)
 
-## 📝 라이선스
+  
+**Built with ❤️ for Children's English Education**
 
-교육 및 연구 목적으로 개발되었습니다.
-
----
-
-**Note**: 이 프로젝트는 지속적으로 개발 중입니다. 상세한 설정이나 데이터는 별도 문의 바랍니다.
+</div>
