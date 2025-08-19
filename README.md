@@ -15,6 +15,12 @@
 
 학습자의 영어 실력에 따라 **대화 난이도를 실시간으로 조절**하는 AI 챗봇입니다. 학생을 대상으로 동화책 기반의 흥미로운 대화를 생성하며, **CEFR 기준**과 **BERT 기반 평가**를 통해 각 학생의 영어 수준을 지속적으로 평가하고 적응합니다.
 
+<div align="center">
+  <img src="./assets/demo.gif" alt="Adaptive English Chatbot Demo" width="80%">
+  <br>
+  <em>실시간 난이도 조절 데모</em>
+</div>
+
 ### ✨ 주요 기능
 
 - 🎯 **실시간 CEFR 레벨 조절** - A1부터 C2까지 자동 난이도 조정
@@ -32,24 +38,6 @@
 - CUDA GPU (선택사항)
 - Poetry
 
-### 설치 방법
-
-```bash
-# 저장소 클론
-git clone https://github.com/[username]/adaptive-english-chatbot.git
-cd adaptive-english-chatbot
-
-# 환경 설정
-cp .env_sample .env
-# .env 파일에 API 키 입력
-
-# 의존성 설치
-poetry install
-
-# L2SCA 권한 설정 (Linux/Mac)
-chmod -R 755 ./L2SCA-2023-08-15
-```
-
 ### 실행
 
 ```bash
@@ -65,7 +53,6 @@ poetry run streamlit run src/streamlit_app.py --server.port 7135
 ### AI/ML 모델
 - **대화 생성**: OpenAI GPT
 - **레벨 평가**: BERT (`AbdulSami/bert-base-cased-cefr`)
-- **음성 처리**: Google Cloud TTS (선택사항)
 
 ### 백엔드
 - **웹 프레임워크**: FastAPI, Streamlit
@@ -134,13 +121,6 @@ def adjust_difficulty(user_input):
 - **LLM**: 창의적이고 자연스러운 대화
 - **하이브리드**: 두 모델의 장점 결합
 
-## 🔮 향후 계획
-
-- [ ] Oxford 5000 단어 리스트 파인튜닝
-- [ ] BERT + LLM 가중치 조합 시스템
-- [ ] 실시간 학습 진도 시각화
-- [ ] 다국어 지원 (한국어, 중국어 등)
-- [ ] 음성 인식/합성 통합
 
 ## 📚 참고 자료
 
