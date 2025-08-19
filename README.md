@@ -14,7 +14,9 @@
 <br>
 
 <div align="center">
-  <img width="90%" alt="CEFR 기반 실시간 레벨 평가 화면" src="https://github.com/user-attachments/assets/f4ed0408-ed37-4dad-9674-ee0f798b16b7" />
+  <kbd>
+    <img width="800" alt="CEFR 기반 실시간 레벨 평가 화면" src="https://github.com/user-attachments/assets/f4ed0408-ed37-4dad-9674-ee0f798b16b7" />
+  </kbd>
   <br><br>
   <b>✨ CEFR 기반 실시간 레벨 평가 화면 데모 ✨</b>
 </div>
