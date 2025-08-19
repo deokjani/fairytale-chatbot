@@ -13,10 +13,13 @@
 
 <br>
 
-<img width="1886" height="876" alt="image" src="https://github.com/user-attachments/assets/f4ed0408-ed37-4dad-9674-ee0f798b16b7" />
+<div align="center">
+  <img width="90%" alt="CEFR 기반 실시간 레벨 평가 화면" src="https://github.com/user-attachments/assets/f4ed0408-ed37-4dad-9674-ee0f798b16b7" />
+  <br><br>
+  <b>✨ CEFR 기반 실시간 레벨 평가 화면 데모 ✨</b>
+</div>
 
-✨ **CEFR 기반 실시간 레벨 평가 화면 데모** ✨
-
+<br>
 
 ## 📌 프로젝트 소개
 
