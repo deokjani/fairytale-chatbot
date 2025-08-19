@@ -148,8 +148,3 @@ def adjust_difficulty(user_input):
 - [BERT CEFR Model](https://huggingface.co/AbdulSami/bert-base-cased-cefr)
 - [L2SCA Tool](https://sites.psu.edu/xxl13/l2sca/)
 - [CEFR-SP Dataset](https://doi.org/10.18653/v1/2022.emnlp-main.416)
-
-  
-**Built with ❤️ for Children's English Education**
-
-</div>
